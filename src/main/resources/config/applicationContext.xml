@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Licensed to SAICMotor,Inc. under the terms of the SAICMotor
+  ~ Software License version 1.0.
+  ~
+  ~ See the NOTICE file distributed with this work for additional
+  ~ information regarding copyright ownership.
+  ~ Date             Author      Version        Comments
+  ~ 2015-12-30       汪邦鸣         1.0            Initial Version
+  ~
+  ~ D:/TrafficSafety/spring-security/src/main/resources/config/applicationContext.xml
+  ~
+  ~ workspace - spring-security
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+<description>Spring公共配置 </description>
+
+	<!-- 激活spring的注解. -->
+	<context:annotation-config />
+
+	<!-- 扫描注解组件并且自动的注入spring beans中.
+    例如,他会扫描@Controller 和@Service下的文件.所以确保此base-package设置正确. -->
+	<context:component-scan base-package="com.wbm.ss" />
+
+	<!-- 配置注解驱动的Spring MVC Controller 的编程模型.注:次标签只在 Servlet MVC工作! -->
+	<mvc:annotation-driven />
+
+</beans>
